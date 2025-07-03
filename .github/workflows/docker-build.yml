@@ -15,8 +15,15 @@ on:
         description: "Create attestation for the built images"
         type: boolean
         required: false
-        default: false
-
+        default: 
+          
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+  actions: read
+  attestations: write
+  
 jobs:
   build-app:
     uses: ./.github/workflows/build-image.yml
