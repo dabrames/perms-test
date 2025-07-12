@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "Fetching list of package versions with tag pr-${{ github.event.pull_request.number }}"
           pr_tag="pr-${{ github.event.pull_request.number }}"
-          for package in "${{ github.repository }}/app" "${{ github.repository }}/filter"; do
+          for package in "perms-test/app" "perms-test/filter"; do
             encoded_package_name="${package//\//%2F}"
             echo "Fetching list of package versions for $package with tag $pr_tag"
             packageVersions=$(gh api -H "Accept: application/vnd.github+json" \
